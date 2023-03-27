@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title>测试在UC浏览器发起请求的referer</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://statres.quickapp.cn/quickapp/js/qa_router.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div>测试在UC浏览器发起请求的referer，反馈问题用</div>
+      <br>
+      <div id="client"></div>
+      <br>
+
+      <qa-router-button
+        data-package-name="com.sina.weibo.quickapp"
+        data-page="/"
+        data-params="{}"
+        data-design-params='{"fontSize": 16,"designWidth": 1080}'
+        style="height: 123px"
+      >
+        <templates style="display:none">
+          <div id="container">
+            <button>点击在iframe内发起请求</button>
+          </div>
+        </templates>
+        <!-- prettier-ignore -->
+        <styles>
+          #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          button {
+            width: 50%;
+            height: 60px;
+            font-size: 16px;
+            color: #4d93ff;
+            border: none;
+            border-radius: 10px;
+            background-color: #e5e5ff;
+            outline: none;
+          }
+        </styles>
+      </qa-router-button>
+    </div>
+    <script>
+      document.getElementById('client').innerHTML = 'User-agent: ' + navigator.userAgent.toLowerCase()
+    </script>
+  </body>
+</html>
